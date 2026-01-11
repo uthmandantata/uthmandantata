@@ -6,22 +6,15 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "your.email@example.com",
-    href: "mailto:your.email@example.com",
+    value: "uthmandantata8@gmail.com",
+    href: "mailto:uthmandantata8@gmail.com",
     placeholder: "Add your email",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "Connect on LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
-    placeholder: "Add your LinkedIn",
   },
   {
     icon: Github,
     label: "GitHub / Portfolio",
     value: "View my work",
-    href: "https://github.com/your-username",
+    href: "https://github.com/uthmandantata",
     placeholder: "Add your link",
   },
 ];
@@ -85,7 +78,7 @@ const Contact = () => {
               Let's build something smart together.
             </p>
             <Button variant="hero" size="xl" asChild>
-              <a href="mailto:your.email@example.com">
+              <a href="mailto:uthmandantata8@gmail.com">
                 <Mail className="w-5 h-5" />
                 Send Me a Message
                 <ArrowUpRight className="w-5 h-5" />

@@ -39,7 +39,7 @@ const WhyMe = () => {
     <section id="why-me" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 data-dots opacity-30" />
-      
+
       <div className="container px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -62,7 +62,7 @@ const WhyMe = () => {
           </motion.div>
 
           {/* Qualities Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
             {qualities.map((quality, index) => (
               <motion.div
                 key={quality.title}
@@ -90,13 +90,13 @@ const WhyMe = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10 max-w-3xl">
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
                 ✨ My Promise
               </h3>
               <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                If you work with me, you get someone who cares about the work, takes ownership, 
+                If you work with me, you get someone who cares about the work, takes ownership,
                 is hungry to learn, communicates clearly, and makes your team smarter, faster, and more informed.
               </p>
             </div>

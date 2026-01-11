@@ -10,6 +10,7 @@ const projects = [
     status: "completed",
     icon: BarChart3,
     highlights: ["Regional trends analysis", "Performance patterns", "Clean data presentation"],
+    link: "https://github.com/uthmandantata/nigerian-graduate-sql-analysis",
   },
   {
     title: "Salary & Remote Jobs Dashboard",
@@ -18,6 +19,7 @@ const projects = [
     status: "coming",
     icon: Briefcase,
     highlights: ["Multi-country analysis", "Salary trends", "Remote work insights"],
+    link: " ",
   },
   {
     title: "End-to-End Analytics Case Study",
@@ -26,6 +28,7 @@ const projects = [
     status: "coming",
     icon: BarChart3,
     highlights: ["Complete workflow", "SQL expertise", "Actionable recommendations"],
+    link: " ",
   },
 ];
 
@@ -56,68 +59,75 @@ const Projects = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.a
                 key={project.title}
-                className="group relative bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-glow transition-all duration-500"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {/* Top Gradient Bar */}
-                <div className="h-1 w-full bg-gradient-to-r from-accent via-accent/60 to-transparent" />
-                
-                <div className="p-6">
-                  {/* Icon and Status */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <project.icon className="w-6 h-6 text-accent" />
+                <motion.div
+                  key={project.title}
+                  className="group relative bg-card rounded-2xl shadow-card overflow-hidden hover:shadow-glow transition-all duration-500"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {/* Top Gradient Bar */}
+                  <div className="h-1 w-full bg-gradient-to-r from-accent via-accent/60 to-transparent" />
+
+                  <div className="p-6">
+                    {/* Icon and Status */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                        <project.icon className="w-6 h-6 text-accent" />
+                      </div>
+                      {project.status === "coming" ? (
+                        <Badge variant="secondary" className="gap-1">
+                          <Clock className="w-3 h-3" />
+                          Coming Soon
+                        </Badge>
+                      ) : (
+                        <Badge className="bg-accent/10 text-accent hover:bg-accent/20">
+                          Completed
+                        </Badge>
+                      )}
                     </div>
-                    {project.status === "coming" ? (
-                      <Badge variant="secondary" className="gap-1">
-                        <Clock className="w-3 h-3" />
-                        Coming Soon
-                      </Badge>
-                    ) : (
-                      <Badge className="bg-accent/10 text-accent hover:bg-accent/20">
-                        Completed
-                      </Badge>
-                    )}
+
+                    {/* Title */}
+                    <h3 className="font-display text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Highlights */}
+                    <ul className="space-y-2 mb-4">
+                      {project.highlights.map((highlight) => (
+                        <li key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs font-medium rounded-md bg-muted text-muted-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="font-display text-xl font-bold mb-3 group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <ul className="space-y-2 mb-4">
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 text-xs font-medium rounded-md bg-muted text-muted-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
