@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Nigerian Graduate Data Analysis",
     description: "A full data exploration project uncovering academic patterns across Nigerian states and regions. Analyzed most popular fields of study, states producing the highest First-Class graduates, and regional trends.",
-    tags: ["Data Cleaning", "Visualization", "Python", "Analysis"],
+    tags: ["SQL", "Data Cleaning", "Data Analysis", "Data Visualization", "Education Data"],
     status: "completed",
     icon: BarChart3,
     highlights: ["Regional trends analysis", "Performance patterns", "Clean data presentation"],
